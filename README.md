@@ -1,2 +1,2 @@
 # SimpleChat
-Simple global chat using NodeJS
+Simple global chat using NodeJS and a mysql database
