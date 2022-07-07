@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>Autentificare</title>
+
+</head>
+<body>
+	<% if(sesiune!=null) { %>
+		<form id="logout" action="/logout" method="post">
+			<label>Logat ca <%=sesiune%></label>
+			<button type="submit">Logout</button>
+		</form>
+	<% } %>
+	<p style="color:red;"><%=msgErr%></p>
+	<h1>Login:</h1>
+	<form id="Inregistrare" action="/verificare-autentificare" method="post">
+		<fieldset>
+		    <label for="numeutilizator">Nume utilizator: </label>
+		    <input type="text" id="numeutilizator" name="numeutilizator" value="nume utilizator"><br>
+		    <label for="parola">Parola: </label>
+		    <input type="password" id="password" name="password" value="***"><br>
+		    
+		</fieldset>
+		<input type="submit" value="Autentificare" >
+        </form>
+		<h1>Inregistrare</h1>
+		<form id="create-new-account" action="/create-account" method="post">
+			<fieldset>
+				<label for="username">Nume utilizator: </label>
+				<input type="text" id="username" name="username" value="nume utilizator"><br>
+				<label for="parola">Parola: </label>
+				<input type="parola" id="parola" name="parola" value="***"><br>
+				
+			</fieldset>
+			<input type="submit" value="Inregistrare">
+			</form>
+	
+</body>
+</html>

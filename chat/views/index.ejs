@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>Chat</title>
+
+</head>
+<body>
+	<% if(sesiune!=null) { %>
+		<form id="logout" action="/logout" method="post">
+			<label>Logat ca <%=sesiune%></label>
+			<button type="submit">Logout</button>
+		</form>
+	<% } %>
+	<p><%=utilizator%></p>
+	<div>
+	<form id="autentificare" action="/autentificare" method="get">
+		<button type="submit">Autentificare</button>
+	</form>
+	<form id="BDselect" action="/select-bd" method="get">
+		<button type="submit">Refresh</button>
+	</form>
+	<hr>
+	</div>
+	<article id="chat-main">
+	<% if(rezultat!="") { %>
+		<%for(var i=0; i<rezultat.length; i++) {%>
+			<p id="nume-afisare"><%=rezultat[i].nume%>:</p> 
+			<p id="mesaj-afisare"><%=rezultat[i].mesaj%></p>
+		<% } %>
+	<% } %>
+</article>
+	<hr>
+	<form id="chat-send" action="/chat-send" method="post">
+		<fieldset>
+			<label for="mesaj">Mesaj(max 254 characters): </label>
+			<input type="text" id="mesaj" name="mesaj" value="Mesaj" maxlength="254"><br>
+		</fieldset>
+		<input type="submit" value="Submit" >
+	</form>
+
+</body>
+</html>

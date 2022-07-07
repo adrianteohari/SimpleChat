@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<% if(sesiune!=null) { %>
+    <form id="logout" action="/logout" method="post">
+      <label>Logat ca <%=sesiune%></label>
+      <button type="submit">Logout</button>
+    </form>
+  <% } %>
+
+  <form id="admin-reset" action="/admin-reset" method="post">
+    <button type="submit">Reset</button>
+</form>
